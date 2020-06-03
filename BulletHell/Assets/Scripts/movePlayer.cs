@@ -6,6 +6,7 @@ public class movePlayer : MonoBehaviour
 {
     bool allowedToMove;
     Collider2D col;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +23,9 @@ public class movePlayer : MonoBehaviour
 
             if(touch.phase == TouchPhase.Began)
             {
-                Collider2D touchedCollider = Physics2D.OverlapPoint(touchPosition);
-                if(col == touchedCollider)
+                //Small optimization, changing basically to grant a commit.
+                //Collider2D touchedCollider = Physics2D.OverlapPoint(touchPosition);
+                if(col == Physics2D.OverlapPoint(touchPosition))
                 {
                     allowedToMove = true;
                 }
