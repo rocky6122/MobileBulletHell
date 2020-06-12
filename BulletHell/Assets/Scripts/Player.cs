@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-    public HealthBar healthBar;
+    [SerializeField]
+    int maxHealth = 100;
+    
+    [SerializeField]
+    int currentHealth;
+
+    [SerializeField]
+    HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -16,14 +21,16 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        //TODO For testing, remove later
         if (Input.GetKeyDown(KeyCode.Space))
         {
             removeHealth(10);
+            Debug.Log("Lose 10 Health");
         }
     }
 
     void checkAndFixHealth()
-    {
+    { 
         if(currentHealth < 0) { currentHealth = 0; }
         if(currentHealth > maxHealth) { currentHealth = maxHealth; }
     }

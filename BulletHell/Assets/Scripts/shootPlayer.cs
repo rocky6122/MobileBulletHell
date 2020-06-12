@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class shootPlayer : MonoBehaviour
 {
-    //public variables
-    //--------------------
-    public Transform bulletSpawn;
-    public Bullet[] bulletTypes;
-    //--------------------
-
     //private variables
     //--------------------
+    [SerializeField]
+    Transform bulletSpawn;
+
+    [SerializeField]
+    Bullet[] bulletTypes;
+
     int currentBulletType;
     float timer;
     //--------------------
