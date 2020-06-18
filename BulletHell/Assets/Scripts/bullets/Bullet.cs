@@ -56,6 +56,14 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag != "bullet") //TODO as of right now bullets can never collide, but in the future we might want some to collide. This would need to be changed for that. - John
         {
             //TODO deal damage
+            if (collision.gameObject.GetComponent<Enemy>())
+            {
+                collision.gameObject.GetComponent<Enemy>().RemoveHealth(damage);
+            }
+            else if (collision.gameObject.GetComponent<Player>())
+            {
+                collision.gameObject.GetComponent<Player>().removeHealth(damage);
+            }
             Debug.Log("Deal " + damage + " Damage!");
         }
     }

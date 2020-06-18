@@ -35,13 +35,13 @@ public class Player : MonoBehaviour
         if(currentHealth > maxHealth) { currentHealth = maxHealth; }
     }
 
-    void removeHealth(int damage)
+    public void removeHealth(int damage)
     {
         currentHealth -= damage;
         healthBar.setHealth(currentHealth);
         checkAndFixHealth();
     }
-    void addHealth(int amount)
+    public void addHealth(int amount)
     {
         currentHealth += amount;
         healthBar.setHealth(currentHealth);
